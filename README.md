@@ -90,8 +90,8 @@ httpd.serve_forever()
   
 ```
 # OUTPUT:
-![Screenshot 2024-12-05 135912](https://github.com/user-attachments/assets/67b025bb-52bd-4094-862f-098ed4501bb1)
-![Screenshot 2024-12-05 135630](https://github.com/user-attachments/assets/b49b24aa-518a-48ea-a3ae-8c471e4af788)
+![Screenshot 2024-12-05 135912](https://github.com/user-attachments/assets/b91b3e66-5d7a-4344-951f-834914fa57ef)
+![Screenshot 2024-12-05 135630](https://github.com/user-attachments/assets/649aa3fb-3466-4f99-b495-8884a16f453d)
 
 
 # RESULT:
