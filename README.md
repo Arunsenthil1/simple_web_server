@@ -1,6 +1,4 @@
-# EX01 Developing a Simple Webserver
-
-# Date:02/11/2024
+# Date:02/12/2024
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -22,6 +20,10 @@ Testing the webserver.
 
 # PROGRAM:
 ```
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class MyHandler(BaseHTTPRequestHandler):
+    html_content = """
 <!doctype html>
 <html>
 <head>
@@ -69,9 +71,28 @@ Testing the webserver.
     </table>
 </body>
 </html>
+
+"""    
+    def do_GET(self):
+        content = self.html_content
+        print("Request received")
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+# Define server address and port
+server_address = ('', 8000)  # Host on all available IPs, port 8000
+httpd = HTTPServer(server_address, MyHandler)
+
+print("My webserver is running...")
+httpd.serve_forever()
+  
 ```
 # OUTPUT:
-![Screenshot 2024-11-18 205008](https://github.com/user-attachments/assets/14f04a78-3140-4e23-a4ba-29f321d055c0)
+![Screenshot 2024-12-05 135912](https://github.com/user-attachments/assets/67b025bb-52bd-4094-862f-098ed4501bb1)
+![Screenshot 2024-12-05 135630](https://github.com/user-attachments/assets/b49b24aa-518a-48ea-a3ae-8c471e4af788)
+
 
 # RESULT:
 The program for implementing simple webserver is executed successfully.
